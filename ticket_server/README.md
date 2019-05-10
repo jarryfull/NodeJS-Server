@@ -5,4 +5,4 @@ npm install body-parser
 npm install morgan
 
 Run Server:
-npx nodemon index.js
+npx nodemon server.js
