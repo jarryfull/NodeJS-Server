@@ -1,15 +1,22 @@
 const express = require('express');
 const router  = express.Router();
 
-//const products = require("../db.json");
-const { products } = require("../db.json");
+// Calling the functions from the require() file
+const {
+    getProducts, 
+    addProduct,
+    updateProduct, 
+    deleteProduct
+} = require("../controllers/products");
 
+// Route for /products/
 router.route('/')
-    .get( (req, res ) => {
-        res.json({ products: products });
-    })
-    .post( ( req, res ) => {
+    .get( getProducts )
+    .post( addProduct );
 
-    });
+// Route for /products/:id
+router.route('/:id')
+    .put( updateProduct )
+    .delete( deleteProduct );
 
 module.exports = router;
