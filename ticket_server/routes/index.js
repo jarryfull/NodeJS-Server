@@ -11,9 +11,9 @@ router.route('/')
             msg: "Welcome to the API for tickets"
         });
     })
-    .post( ( req, res ) => {
-        console.log("Reciviendo datos");
-        res.json("Datos Recividos");
-    });
+    //.post( ( req, res ) => {
+    //    console.log("Reciviendo datos");
+    //    res.json("Datos Recividos");
+    //});
 
 module.exports = router;

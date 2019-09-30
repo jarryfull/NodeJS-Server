@@ -1,10 +1,14 @@
 const { products } = require("../db.json");
+const db = require('../database/database');
 
 module.exports = {
 
-    getProducts: (req, res ) => {
+    getProducts: async (req, res ) => {
+        const usrs = await db.query('SELECT * FROM users');
+        console.log(req.body);
         res.json({ 
             products: products,
+            users: usrs,
             route: "Route /products",
             method: "GET"
         });
