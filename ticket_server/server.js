@@ -13,24 +13,21 @@
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const express = require('express');
-const passport = require('passport');
 const port = 3000;
 
 // Initializations
 const app = express();
-require('./lib/passport');
 
 /////////////////
 //    Routes   //
 /////////////////
 const indexAPI       = require('./routes/index');
-const authenticate   = require('./routes/authentication');
 const productsRoutes = require('./routes/products');
 
 /////////////////
 //   Settings  //
 /////////////////
-app.set('json spaces', 4);
+app.set('json spaces', 2);
 /////////////////
 // Middlewares //
 /////////////////
@@ -38,14 +35,11 @@ app.use( morgan( 'dev' ) );
 app.use( bodyParser.json() );
 // To get data across the URL (Form)
 app.use( bodyParser.urlencoded({extended: false}));
-app.use( passport.initialize() );
-app.use( passport.session() );
 
 /////////////////
 //    Routes   //
 /////////////////
 app.use( '/', indexAPI );
-app.use( '/', authenticate );
 app.use( '/products', productsRoutes );
 
 //////////////////

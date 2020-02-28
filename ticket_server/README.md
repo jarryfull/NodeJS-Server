@@ -1,13 +1,17 @@
-Dependencies:
+# Configuring the server
+
+**Dependencies:**
+```
 npm install express
 npm install nodemon
 npm install body-parser
 npm install morgan
 npm install express-session
-npm install passport
-npm install passport-local
+```
 
-Run Server:
+**Run Server:**
 npx nodemon server.js
 
-Login: https://www.youtube.com/watch?v=qJ5R9WTW0_E
+- [x] Configure REST API server
+- [ ] Create CRUD for Tickets
+- [ ] Create Frontend to create, update, delete and show the tickets 
